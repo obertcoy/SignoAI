@@ -1,0 +1,22 @@
+
+.slide{
+
+    cursor: pointer;
+    /* transition: background-color 0.3s, color 0.3s; */
+  }
+  
+.active-slide {
+    color: whitesmoke; 
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+
+#slider-indicator{
+    transition: transform 0.3s ease-out;
+    background-color: #1b1464; 
+}
+
+.slider-bullet{
+    background-color: #544f8b;
+}
+  
