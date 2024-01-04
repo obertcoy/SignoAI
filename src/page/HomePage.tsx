@@ -65,7 +65,7 @@ export default function HomePage() {
       </section>
 
       <section className="flex flex-col w-full min-h-screen z-10 bg-slate-50 ">
-        <div className='flex flex-col w-4/6 h-screen mx-auto gap-2 py-8 mt-4 not-shown' ref={refHowItWorks}>
+        <div className='flex flex-col w-4/6 h-screen mx-auto gap-2 py-8 mt-16 not-shown' ref={refHowItWorks}>
             <h3 className='text-xl text-violet-950'>How It Works</h3>
             <h2 className='text-3xl font-bold text-violet-950'>Translate Easily with SignoAI</h2>
 
