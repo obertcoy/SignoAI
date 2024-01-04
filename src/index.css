@@ -31,6 +31,11 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
+  scroll-snap-type: y mandatory;
+}
+
+section{
+  scroll-snap-align: start;
 }
 
 h1 {
@@ -55,6 +60,16 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+::-webkit-scrollbar{
+
+  width: 5px;
+  background-color: #1b1464;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #FFFFE0;
 }
 
 @media (prefers-color-scheme: light) {
