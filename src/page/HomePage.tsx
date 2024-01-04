@@ -65,7 +65,7 @@ export default function HomePage() {
       </section>
 
       <section className="flex flex-col w-full min-h-screen z-10 bg-slate-50 ">
-        <div className='flex flex-col w-4/6 h-screen mx-auto gap-2 py-8 mt-16 not-shown' ref={refHowItWorks}>
+        <div className='flex flex-col w-4/6 h-screen mx-auto gap-2 py-8 mt-12 not-shown' ref={refHowItWorks}>
             <h3 className='text-xl text-violet-950'>How It Works</h3>
             <h2 className='text-3xl font-bold text-violet-950'>Translate Easily with SignoAI</h2>
 
@@ -135,7 +135,7 @@ export default function HomePage() {
 
       <section id='events-section' className="flex flex-col w-full min-h-screen z-10" >
 
-      <div className='flex flex-col w-4/6 h-screen mx-auto gap-4 py-8 mt-4 not-shown' ref={refEvents}>
+      <div className='flex flex-col w-4/6 h-screen mx-auto gap-4 py-8 mt-12 not-shown' ref={refEvents}>
             <h3 className='text-xl text-slate-50'>Events</h3>
             <h2 className='text-3xl font-bold text-slate-50'>Catch up with the latest <br/> news of SignoAi</h2>
 
