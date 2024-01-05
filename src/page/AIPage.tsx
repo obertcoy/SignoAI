@@ -17,7 +17,7 @@ export default function AIPage() {
     
     const loadTrainedModel = async () => {
         try {
-            modelRef.current = await tf.loadLayersModel("https://firebasestorage.googleapis.com/v0/b/signoai.appspot.com/o/model.json?alt=media&token=5d19721a-9bf9-4b98-8ff6-98d57abf0edd");
+            modelRef.current = await tf.loadLayersModel("https://signo-ai-y6gj.vercel.app/model.json");
         } catch (error) {
             console.error("Error loading the model:", error);
         }
