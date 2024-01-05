@@ -147,10 +147,10 @@ export default function HomePage() {
 
             <div className='flex flex-col w-2/6 h-full gap-8 items-center'>
 
-                <img src="../../public/assets/about/about1.jpg" className="object-cover w-auto h-auto shadow-lg rounded-full" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/signoai.appspot.com/o/about1.jpg?alt=media&token=3a7855d7-55fa-4f42-91c8-45d62c766e1f" className="object-cover w-auto h-auto shadow-lg rounded-full" />
               
 
-                <img src="../../public/assets/about/about2.jpg" className="object-cover w-auto h-auto shadow-lg rounded-full" style={{marginLeft: '10vw'}}/>
+                <img src="https://firebasestorage.googleapis.com/v0/b/signoai.appspot.com/o/about2.jpg?alt=media&token=3f79aefb-ecb7-4645-a25a-b5384582d8c0" className="object-cover w-auto h-auto shadow-lg rounded-full" style={{marginLeft: '10vw'}}/>
             </div>
 
           </div>
@@ -170,7 +170,7 @@ export default function HomePage() {
 
             <div className='flex w-3/ mt-6 mx-auto rounded-xl shadow-md' style={{height: '65%'}}>
 
-                <img src="../../public/assets/hand-sign.jpg" className="object-fit-object-fit-contain rounded-3xl" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/signoai.appspot.com/o/event.jpg?alt=media&token=44c15b6a-d657-4b13-9465-0de136233034" className="object-fit-object-fit-contain rounded-3xl" />
                 
             </div>
 
