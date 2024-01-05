@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { drawConnectors, drawLandmarks } from "@mediapipe/drawing_utils";
-import getHand from "../../controller/AIController.ts";
+import getHand from "../controller/AIController";
 import { Camera } from "@mediapipe/camera_utils";
 import * as tf from "@tensorflow/tfjs";
 import { HAND_CONNECTIONS, NormalizedLandmarkListList, Results } from "@mediapipe/hands";
@@ -17,9 +17,14 @@ export default function AIPage() {
     const imageRef = useRef<HTMLImageElement>(null);
     
     const loadTrainedModel = async () => {
-        modelRef.current = await tf.loadLayersModel("../assets/model.json");
-        setModelLoaded(true);
+        try {
+            modelRef.current = await tf.loadLayersModel("/model.json");
+            setModelLoaded(true);
+        } catch (error) {
+            console.error("Error loading the model:", error);
+        }
     };
+    
     
     const retrieveCanvasContext = () => {
         return {
@@ -34,7 +39,9 @@ export default function AIPage() {
             let minX = canvas.width,
                 minY = canvas.height,
                 maxX = 0,
-                maxY = 0;
+                maxY = 0,
+                minZ = 0,
+                maxZ = 100;
             const landmarkData = [];
 
             for (const point of landmarks) {
@@ -42,10 +49,14 @@ export default function AIPage() {
                 maxX = Math.max(maxX, point.x * canvas.width) + 3;
                 minY = Math.min(minY, point.y * canvas.height) - 3;
                 maxY = Math.max(maxY, point.y * canvas.height) + 3;
+                minZ = Math.min(minZ, point.z * canvas.height) - 3;
+                maxZ = Math.max(maxZ, point.z * canvas.width) + 3;
                 const relativeX = point.x - landmarks[0].x;
                 const relativeY = point.y - landmarks[0].y;
+                const relativeZ = point.z - landmarks[0].z;
                 landmarkData.push(relativeX);
                 landmarkData.push(relativeY);
+                landmarkData.push(relativeZ);
             }
             drawConnectors(ctx, landmarks, HAND_CONNECTIONS, { color: "#3366FF", lineWidth: 1 });
             drawLandmarks(ctx, landmarks, {
@@ -61,20 +72,27 @@ export default function AIPage() {
     };
     
     const processHandGesturePrediction = async (landmarkData: number[]) => {
-        if (!modelLoaded) {
-            // console.log("model not loaded")
+        const model = modelRef.current!;
+
+        if (landmarkData.length !== 63) {
+            console.error("Invalid landmarkData length");
             return;
         }
     
-        const model = modelRef.current!;
         const flattenedLandmarkData = new Float32Array(landmarkData);
-        const predictionResult = model.predict(tf.tensor([flattenedLandmarkData]));
+    
+        const inputTensor = tf.tensor2d(flattenedLandmarkData, [1, 63]);
+    
+        const predictionResult = model.predict(inputTensor);
         const predictedLabel = tf.argMax(predictionResult as tf.Tensor, 1).dataSync()[0];
-        const gestureLabels = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "Space", "T", "U", "V", "W", "X", "Y", "Z"];
+    
+        const gestureLabels = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    
         const prediction = gestureLabels[predictedLabel];
         console.log("Prediction:", prediction);
         setPredicted(prediction);
     };
+    
 
     const displayHandImageResults = (results: Results) => {
         const { canvas, ctx } = retrieveCanvasContext();
