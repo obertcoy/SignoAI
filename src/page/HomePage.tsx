@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import ParticleBackground from '../particle/ParticleBackground';
 import '../css/HomePage.css'
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
 
@@ -41,6 +42,12 @@ export default function HomePage() {
         setActiveSlide(slide)
     }
 
+    //routing
+    const navigate = useNavigate()
+    const handleClick = ()=>{
+      navigate("/AI")
+    }
+
   return (
     <div className="flex flex-col max-w-screen min-h-screen" id="home-container">
       <section className="flex flex-col w-full h-screen relative home-section" >
@@ -58,7 +65,7 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-col items-center gap-2 w-full">
-            <button className="w-1/2 rounded-full shadow-sm hover:bg-slate-100">Try SignoAI</button>
+            <button className="w-1/2 rounded-full shadow-sm hover:bg-slate-100" onClick={handleClick}>Try SignoAI</button>
             <span className="text-sm font-light text-white">Try our AI for free!</span>
           </div>
         </div>
