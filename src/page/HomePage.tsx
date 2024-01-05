@@ -92,26 +92,9 @@ export default function HomePage() {
             <div className='flex w-full bg-black mt-4 mb-2 shadow-md' style={{height: '75%'}}>
 
               {activeSlide == 1 ? (
-                 <section className="flex flex-col w-full h-full relative" >
-
-                 <div className='absolute w-full h-full'>
-                     <ParticleBackground />
-                 </div>
-         
-                 <div className="flex flex-col m-auto z-10 h-1/2 justify-between items-center">
-                   <div className="flex flex-col gap-2 text-center w-full">
-                     <h1 className="text-8xl font-bold text-white">SIGNOAI</h1>
-                     <h3 className="text-2xl italic font-light text-white" style={{ letterSpacing: '4px' }}>
-                       Hand Sign Recognition
-                     </h3>
-                   </div>
-         
-                   <div className="flex flex-col items-center gap-2 w-full">
-                     <button className="w-1/2 rounded-full shadow-sm hover:bg-slate-100" onClick={handleClick}>Try SignoAI</button>
-                     <span className="text-sm font-light text-white">Try our AI for free!</span>
-                   </div>
-                 </div>
-               </section>
+                <div className="flex w-full h-full">
+                  <img src="../src/assets/test.jpg" className="object-fill w-full h-full" />
+                </div>
               ) : null}
 
               {activeSlide == 2 ? (
@@ -120,6 +103,11 @@ export default function HomePage() {
                 </div>
               ) : null}
 
+              {activeSlide == 3 ? (
+                <div className="flex w-full h-full">
+                  <img src="../src/assets/result.jpg" className="object-fill w-full h-full" />
+                </div>
+              ) : null}
             </div>
 
             <div className=" flex items-center w-1/6 m-auto justify-center gap-4">
@@ -132,10 +120,10 @@ export default function HomePage() {
 
         </div>
 
-        <div className='flex flex-col w-4/6 h-screen mx-auto gap-2 py-8 mt-4 not-shown' ref={refAbout}>
+        <div className='flex flex-col w-4/6 h-screen mx-auto  gap-2 py-8 mt-4 not-shown' ref={refAbout}>
             <h3 className='text-xl text-violet-950'>About</h3>
 
-          <div className='flex flex-row w-full h-full gap-6'>
+          <div className='flex flex-row w-full h-full gap-6 justify-between'>
 
             <div className='flex flex-col w-3/6 h-full gap-3'>
               <h2 className='text-3xl font-bold text-violet-950'>Empowering Inclusivity <br/> through SignoAi</h2>
@@ -157,8 +145,12 @@ export default function HomePage() {
 
             </div>
 
-            <div className=''>
+            <div className='flex flex-col w-2/6 h-full gap-8 items-center'>
 
+                <img src="../src/assets/about/about1.jpg" className="object-cover w-auto h-auto shadow-lg rounded-full" />
+              
+
+                <img src="../src/assets/about/about2.jpg" className="object-cover w-auto h-auto shadow-lg rounded-full" style={{marginLeft: '10vw'}}/>
             </div>
 
           </div>
