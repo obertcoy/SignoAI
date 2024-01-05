@@ -78,12 +78,9 @@ export default function AIPage() {
         }
     
         const flattenedLandmarkData = new Float32Array(landmarkData);
-    
         const inputTensor = tf.tensor2d(flattenedLandmarkData, [1, 63]);
-    
         const predictionResult = model.predict(inputTensor);
         const predictedLabel = tf.argMax(predictionResult as tf.Tensor, 1).dataSync()[0];
-    
         const gestureLabels = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     
         const prediction = gestureLabels[predictedLabel];
@@ -134,37 +131,37 @@ export default function AIPage() {
         <>
             <div className="relative overflow-hidden flex justify-center items-center min-h-screen bg-[#1b1464]">
                 <div className="inset-0">
-                <img ref={imageRef} className="absolute inset-0 w-full h-full object-cover m-0 p-0"
-                />
-                <section className="flex flex-col items-center justify-center w-3/6 h-fit z-[-1] object-cover">
-                    <canvas className="z-0 w-full h-fit aspect-h-9 aspect-w-16"
-                        ref={canvasRef}
-                        width={1920}
-                        height={1080}
+                    <img ref={imageRef} className="absolute inset-0 w-full h-full object-cover m-0 p-0"
                     />
-                    <canvas className="z-0 h-auto aspect-w-16 aspect-h-9"
-                        ref={canvasRef2}
-                        width={1920 / 4}
-                        height={1080 / 4}
-                        style={{
-                            width: '200px',
-                            height: '200px',
-                            
-                        }}
-                    />
-                    <video
-                        hidden={true}
-                        className="w-full h-full"
-                        ref={videoRef}
-                    />
-                </section>
+                    <section className="flex flex-col items-center justify-center w-3/6 h-fit z-[-1] object-cover mx-auto my-auto translate-y-24">
+                        <canvas className="z-0 w-full h-fit aspect-h-9 aspect-w-16"
+                            ref={canvasRef}
+                            width={1920}
+                            height={1080}
+                        />
+                        <canvas className="z-0 h-auto aspect-w-16 aspect-h-9"
+                            ref={canvasRef2}
+                            width={1920 / 4}
+                            height={1080 / 4}
+                            style={{
+                                width: '200px',
+                                height: '200px',
+                                
+                            }}
+                        />
+                        <video
+                            hidden={true}
+                            className="w-full h-full"
+                            ref={videoRef}
+                        />
+                    </section>
                 </div>
                 <div className="absolute top-0 left-0 p-4">
                     <button className="bg-slate-50 text-[#1b1464] w-full  rounded text-lg" onClick={handleClick}>
                         Back
                     </button>
                 </div>
-                <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
+                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 translate-y-8">
                     <div className="text-7xl font-bold text-white">
                         SignoAI
                     </div>
