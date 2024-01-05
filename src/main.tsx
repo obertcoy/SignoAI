@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import App from './App'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import HomePage from './page/HomePage'
 import AIPage from './page/AIPage'
