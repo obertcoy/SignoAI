@@ -93,19 +93,19 @@ export default function HomePage() {
 
               {activeSlide == 1 ? (
                 <div className="flex w-full h-full">
-                  <img src="../src/assets/test.jpg" className="object-fill w-full h-full" />
+                  <img src="https://firebasestorage.googleapis.com/v0/b/signoai.appspot.com/o/test.jpg?alt=media&token=a2e69819-3a75-4ae9-bb6f-a69da6d07b2b" className="object-fill w-full h-full" />
                 </div>
               ) : null}
 
               {activeSlide == 2 ? (
                 <div className="flex w-full h-full">
-                  <img src="../src/assets/camera2.jpg" className="object-fill w-full h-full" />
+                  <img src="https://firebasestorage.googleapis.com/v0/b/signoai.appspot.com/o/camera2.jpg?alt=media&token=67942b82-6e26-4b10-8871-fba65922c7e2" className="object-fill w-full h-full" />
                 </div>
               ) : null}
 
               {activeSlide == 3 ? (
                 <div className="flex w-full h-full">
-                  <img src="../src/assets/result2.jpg" className="object-fill w-full h-full" />
+                  <img src="https://firebasestorage.googleapis.com/v0/b/signoai.appspot.com/o/result2.jpg?alt=media&token=5139db3e-1711-468c-84df-a9d779747c8d" className="object-fill w-full h-full" />
                 </div>
               ) : null}
             </div>
