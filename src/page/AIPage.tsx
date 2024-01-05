@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function AIPage() {
     const modelRef = useRef<tf.LayersModel | null>(null);
-    const [modelLoaded, setModelLoaded] = useState(false);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const canvasRef2 = useRef<HTMLCanvasElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -19,7 +18,6 @@ export default function AIPage() {
     const loadTrainedModel = async () => {
         try {
             modelRef.current = await tf.loadLayersModel("/model.json");
-            setModelLoaded(true);
         } catch (error) {
             console.error("Error loading the model:", error);
         }
@@ -41,7 +39,7 @@ export default function AIPage() {
                 maxX = 0,
                 maxY = 0,
                 minZ = 0,
-                maxZ = 100;
+                maxZ = 0;
             const landmarkData = [];
 
             for (const point of landmarks) {
@@ -89,8 +87,9 @@ export default function AIPage() {
         const gestureLabels = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     
         const prediction = gestureLabels[predictedLabel];
-        console.log("Prediction:", prediction);
-        setPredicted(prediction);
+        // console.log("Prediction:", prediction);
+        const predictRes = "Result = " + prediction
+        setPredicted(predictRes);
     };
     
 
