@@ -93,19 +93,19 @@ export default function HomePage() {
 
               {activeSlide == 1 ? (
                 <div className="flex w-full h-full">
-                  <img src="../src/assets/test.jpg" className="object-fill w-full h-full" />
+                  <img src="../../public/assets/test.jpg" className="object-fill w-full h-full" />
                 </div>
               ) : null}
 
               {activeSlide == 2 ? (
                 <div className="flex w-full h-full">
-                  <img src="../src/assets/camera2.jpg" className="object-fill w-full h-full" />
+                  <img src="../../public/src/assets/camera2.jpg" className="object-fill w-full h-full" />
                 </div>
               ) : null}
 
               {activeSlide == 3 ? (
                 <div className="flex w-full h-full">
-                  <img src="../src/assets/result2.jpg" className="object-fill w-full h-full" />
+                  <img src="../../public/src/assets/result2.jpg" className="object-fill w-full h-full" />
                 </div>
               ) : null}
             </div>
@@ -147,10 +147,10 @@ export default function HomePage() {
 
             <div className='flex flex-col w-2/6 h-full gap-8 items-center'>
 
-                <img src="../src/assets/about/about1.jpg" className="object-cover w-auto h-auto shadow-lg rounded-full" />
+                <img src="../../public/assets/about/about1.jpg" className="object-cover w-auto h-auto shadow-lg rounded-full" />
               
 
-                <img src="../src/assets/about/about2.jpg" className="object-cover w-auto h-auto shadow-lg rounded-full" style={{marginLeft: '10vw'}}/>
+                <img src="../../public/assets/about/about2.jpg" className="object-cover w-auto h-auto shadow-lg rounded-full" style={{marginLeft: '10vw'}}/>
             </div>
 
           </div>
@@ -170,7 +170,7 @@ export default function HomePage() {
 
             <div className='flex w-3/ mt-6 mx-auto rounded-xl shadow-md' style={{height: '65%'}}>
 
-                <img src="../src/assets/hand-sign.jpg" className="object-fit-object-fit-contain rounded-3xl" />
+                <img src="../../public/assets/hand-sign.jpg" className="object-fit-object-fit-contain rounded-3xl" />
                 
             </div>
 
