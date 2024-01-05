@@ -85,7 +85,7 @@ export default function AIPage() {
     
         const prediction = gestureLabels[predictedLabel];
         // console.log("Prediction:", prediction);
-        const predictRes = "Result = " + prediction
+        const predictRes = prediction
         setPredicted(predictRes);
     };
     
@@ -134,7 +134,7 @@ export default function AIPage() {
                     <img ref={imageRef} className="absolute inset-0 w-full h-full object-cover m-0 p-0"
                     />
                     <section className="flex flex-col items-center justify-center w-3/6 h-fit z-[-1] object-cover mx-auto my-auto translate-y-24">
-                        <canvas className="z-0 w-full h-fit aspect-h-9 aspect-w-16"
+                        <canvas className="z-0 w-full h-fit aspect-h-9 aspect-w-16 rounded-lg shadow-lg"
                             ref={canvasRef}
                             width={1920}
                             height={1080}
@@ -156,19 +156,19 @@ export default function AIPage() {
                         />
                     </section>
                 </div>
-                <div className="absolute top-0 left-0 p-4">
-                    <button className="bg-slate-50 text-[#1b1464] w-full  rounded text-lg" onClick={handleClick}>
+                <div className="absolute top-4 left-4">
+                    <button className="bg-slate-50 text-[#1b1464] w-full px-7 py-2  rounded text-md" onClick={handleClick}>
                         Back
                     </button>
                 </div>
-                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 translate-y-8">
-                    <div className="text-7xl font-bold text-white">
+                <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
+                    <div className="text-6xl font-bold text-white">
                         SignoAI
                     </div>
                 </div>
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                    <div className="text-white text-5xl italic">
-                        {predictedLetter}
+                <div className="absolute bottom-14 left-1/2 transform -translate-x-1/2">
+                    <div className="text-white text-4xl italic text-center">
+                        {predictedLetter != 'Hand Sign Recognition' ?  'Result =' : ''} <b>{predictedLetter}</b>
                     </div>
                 </div>
             </div>
