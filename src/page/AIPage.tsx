@@ -117,7 +117,7 @@ export default function AIPage() {
         <>
             <div className="relative overflow-hidden flex justify-center items-center min-h-screen bg-[#1b1464]">
                 <div className="inset-0">
-                <img ref={imageRef} className="absolute inset-0 w-full h-full object-cover"
+                <img ref={imageRef} className="absolute inset-0 w-full h-full object-cover m-0 p-0"
                 />
                 <section className="flex flex-col items-center justify-center w-3/6 h-fit z-[-1] object-cover">
                     <canvas className="z-0 w-full h-fit aspect-h-9 aspect-w-16"
@@ -132,6 +132,7 @@ export default function AIPage() {
                         style={{
                             width: '200px',
                             height: '200px',
+                            
                         }}
                     />
                     <video
@@ -142,7 +143,7 @@ export default function AIPage() {
                 </section>
                 </div>
                 <div className="absolute top-0 left-0 p-4">
-                    <button className="bg-white text-[#1b1464] px-12 py-5 rounded text-2xl" onClick={handleClick}>
+                    <button className="bg-slate-50 text-[#1b1464] w-full  rounded text-lg" onClick={handleClick}>
                         Back
                     </button>
                 </div>

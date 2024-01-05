@@ -76,7 +76,7 @@ export default function HomePage() {
             <h3 className='text-xl text-violet-950'>How It Works</h3>
             <h2 className='text-3xl font-bold text-violet-950'>Translate Easily with SignoAI</h2>
 
-            <div className='flex flex-row w-full h-12 justify-evenly gap-5 rounded-xl shadow-md mt-6 relative'>
+            <div className='flex flex-row w-full min-h-12 justify-evenly gap-5 rounded-xl shadow-md mt-6 relative'>
                 <div className={`flex items-center justify-center w-full rounded-xl text-lg font-semibold cursor-pointer ${activeSlide == 1 ? 'active-slide' : ''}`} onClick={() => handleSlide(1)}>
                     <h3>1&emsp;Start Test</h3>
                 </div>
@@ -91,7 +91,34 @@ export default function HomePage() {
 
             <div className='flex w-full bg-black mt-4 mb-2 shadow-md' style={{height: '75%'}}>
 
-              {/* content */}
+              {activeSlide == 1 ? (
+                 <section className="flex flex-col w-full h-full relative" >
+
+                 <div className='absolute w-full h-full'>
+                     <ParticleBackground />
+                 </div>
+         
+                 <div className="flex flex-col m-auto z-10 h-1/2 justify-between items-center">
+                   <div className="flex flex-col gap-2 text-center w-full">
+                     <h1 className="text-8xl font-bold text-white">SIGNOAI</h1>
+                     <h3 className="text-2xl italic font-light text-white" style={{ letterSpacing: '4px' }}>
+                       Hand Sign Recognition
+                     </h3>
+                   </div>
+         
+                   <div className="flex flex-col items-center gap-2 w-full">
+                     <button className="w-1/2 rounded-full shadow-sm hover:bg-slate-100" onClick={handleClick}>Try SignoAI</button>
+                     <span className="text-sm font-light text-white">Try our AI for free!</span>
+                   </div>
+                 </div>
+               </section>
+              ) : null}
+
+              {activeSlide == 2 ? (
+                <div className="flex w-full h-full">
+                  <img src="../src/assets/demo.png" className="object-fill w-full h-full" />
+                </div>
+              ) : null}
 
             </div>
 
@@ -113,17 +140,20 @@ export default function HomePage() {
             <div className='flex flex-col w-3/6 h-full gap-3'>
               <h2 className='text-3xl font-bold text-violet-950'>Empowering Inclusivity <br/> through SignoAi</h2>
               
-              <span className='text-3xl mt-4 about-text'><b>SignoiAI</b> is dedicated to extending the advantages of artificial intelligence to everyone, 
-                aligning with our commitment to make information universally accessible and useful.
-              </span>
-              
-              <span className='text-3xl mt-2 about-text'>
-                <b>SignoiAI</b> focuses on fostering inclusivity for the deaf community by developing cutting edge AI technology
-                that translates hand signs. This innovative approach not only expands the boundaries of what's achievable but also
-                addresses a specific need, making a meaningful impact on the lives of those who rely on sign languange.
-                From groundbreaking research to seamless product integrations, SignoAI exemplifies our dedication to responsible innovation,
-                ensuring that AI technologies benefit humanity at large.
-              </span>
+              <div className="flex flex-col w-full mt-4">
+
+                <span className='text-3xl about-text'><b>SignoiAI</b> is dedicated to extending the advantages of artificial intelligence to everyone, 
+                  aligning with our commitment to make information universally accessible and useful.
+                </span>
+                
+                <span className='text-3xl mt-2 about-text '>
+                  <b>SignoiAI</b> focuses on fostering inclusivity for the deaf community by developing cutting edge AI technology
+                  that translates hand signs. This innovative approach not only expands the boundaries of what's achievable but also
+                  addresses a specific need, making a meaningful impact on the lives of those who rely on sign languange.
+                  From groundbreaking research to seamless product integrations, SignoAI exemplifies our dedication to responsible innovation,
+                  ensuring that AI technologies benefit humanity at large.
+                </span>
+              </div>
 
             </div>
 
@@ -146,10 +176,10 @@ export default function HomePage() {
             <h3 className='text-xl text-slate-50'>Events</h3>
             <h2 className='text-3xl font-bold text-slate-50'>Catch up with the latest <br/> news of SignoAi</h2>
 
-            <div className='flex w-3/4 bg-slate-50 mt-6 mx-auto rounded-xl shadow-md' style={{height: '65%'}}>
+            <div className='flex w-3/ mt-6 mx-auto rounded-xl shadow-md' style={{height: '65%'}}>
 
-                {/* events content */}
-
+                <img src="../src/assets/hand-sign.jpg" className="object-fit-object-fit-contain rounded-3xl" />
+                
             </div>
 
 
