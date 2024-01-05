@@ -99,13 +99,13 @@ export default function HomePage() {
 
               {activeSlide == 2 ? (
                 <div className="flex w-full h-full">
-                  <img src="../src/assets/demo.png" className="object-fill w-full h-full" />
+                  <img src="../src/assets/camera2.jpg" className="object-fill w-full h-full" />
                 </div>
               ) : null}
 
               {activeSlide == 3 ? (
                 <div className="flex w-full h-full">
-                  <img src="../src/assets/result.jpg" className="object-fill w-full h-full" />
+                  <img src="../src/assets/result2.jpg" className="object-fill w-full h-full" />
                 </div>
               ) : null}
             </div>
